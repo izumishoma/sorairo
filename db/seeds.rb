@@ -14,13 +14,16 @@ Admin.create!(
 User.create!(
   name: "山田太郎",
   display_name: "山田",
+  introduction: 'よろしく',
   email: "yamada.taro@gmail.com",
   password: "111111"
 )
 User.create!(
   name: "ジョンスミス",
   display_name: "ジョン",
+  introduction: 'hello',
   email: "jon.sumisu@gmail.com",
   password: "111111"
 )
+
 

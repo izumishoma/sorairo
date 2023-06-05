@@ -1,0 +1,33 @@
+<%= flash[:alert] %>
+<h2>ユーザー情報編集</h2>
+
+<%= form_with model: @user,id: 'new_user', class: 'new_user' do |f| %>
+  <%#= render "public/shared/error_messages", resource: resource %>
+
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, placeholder: "令和太郎" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :display_name %><br />
+    <%= f.text_field :display_name, autofocus: true, placeholder: "レイタ"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :introduction %><br />
+    <%= f.text_field :introduction, autofocus: true, placeholder: "紹介文"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, placeholder: "sample@example.com" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<%#= render "public/shared/links" %>

@@ -1,2 +1,6 @@
-<h1>Admin::Users#show</h1>
-<p>Find me in app/views/admin/users/show.html.erb</p>
+  <div class = "row ml-5 mt-5">
+    <!--ユーザーのプロフィール画像を表示-->
+    <%#= image_tag user.get_profile_image(200,200)%>
+    <%= @user.display_name %>
+    <%= @user.introduction %>
+  </div>
