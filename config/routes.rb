@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
    # ユーザー側のルーティング設定
   scope module: :public do
-    # 投稿のルートにいいねとśメントをネスト
+    # 投稿のルートにいいねとコメントをネスト
     resources :posts, only:[:new, :create, :index, :show, :destroy]do
       resource :favorites, only:[:create, :destroy]
       resources :comments, only:[:create, :destroy]

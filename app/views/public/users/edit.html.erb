@@ -2,8 +2,10 @@
 <h2>ユーザー情報編集</h2>
 
 <%= form_with model: @user,id: 'new_user', class: 'new_user' do |f| %>
-  <%#= render "public/shared/error_messages", resource: resource %>
 
+  <div class="field">
+    <%= f.file_field :profile_image, accept: "image/*" %>
+  </div>
 
   <div class="field">
     <%= f.label :name %><br />
@@ -30,4 +32,3 @@
   </div>
 <% end %>
 
-<%#= render "public/shared/links" %>
