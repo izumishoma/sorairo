@@ -1,0 +1,15 @@
+
+
+<!--管理者がログインしていたら-->
+<% if admin_signed_in? %>
+  <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "nav-link gold btnripple3 mt-3" %>
+<!--顧客がログインしていたら-->
+<% elsif user_signed_in? %>
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link gold btnripple3 mt-3" %>
+  <%= link_to user_path(current_user.id), class: "nav-link gold btnripple3 mt-3" do %>
+    <i class="fas fa-user-cog nisegold"></i>
+    マイページ
+  <% end %>
+  <%= current_user.display_name %>
+<% end %>
+

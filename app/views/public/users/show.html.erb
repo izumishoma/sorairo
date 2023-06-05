@@ -1,2 +1,9 @@
-<h1>Public::Users#show</h1>
-<p>Find me in app/views/public/users/show.html.erb</p>
+  <%= flash[:notice] %>
+
+  <div class = "row ml-5 mt-5">
+    <!--ユーザーのプロフィール画像を表示-->
+    <%= image_tag @user.get_profile_image, size: "200x200" %>
+    <%= @user.display_name %>
+    <%= @user.introduction %>
+    <%= link_to "編集", edit_user_path(current_user.id) %>
+  </div>
