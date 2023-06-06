@@ -1,0 +1,16 @@
+<% comments.each do |comment| %>
+<div class = "row" >
+  <!--コメントの内容が表示される-->
+  <%= comment.user.name %><br>
+  <%= comment.comment %>
+  <%= link_to "削除", post_comment_path(comment.post,comment), method: :delete, class: "btn btn-sm btn-danger"   %>
+</div>
+<% end %>
+
+
+<%= form_with model: [post, comment]  do |f| %>
+  <%= f.text_area :comment, placeholder: 'コメント' %>
+  <%= f.hidden_field :post_id, value: post.id %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.submit "コメントする" %>
+<% end %>

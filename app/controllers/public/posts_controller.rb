@@ -1,4 +1,7 @@
 class Public::PostsController < ApplicationController
+   #ユーザーのログイン状態を確かめる。indexはログインしてなくても閲覧可能にしてます。
+  before_action :authenticate_user!, only: [:newe, :show, :create]
+  
   def new
     @post = Post.new
   end
@@ -18,6 +21,8 @@ class Public::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comments
+    @comment = Comment.new
   end
 
   def destroy
