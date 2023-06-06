@@ -1,2 +1,11 @@
-<h1>Public::Posts#new</h1>
-<p>Find me in app/views/public/posts/new.html.erb</p>
+<%= form_with model: @post do |f| %>
+  <div class="field">
+    <%= f.file_field :image, accept: "image/*" %>
+  </div>
+  <div class="field">
+    <%= f.label :posted_text %>
+    <%= f.text_field :posted_text, class: 'form-control' %>
+  </div>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.submit class: 'btn btn-success' %>
+<% end %>

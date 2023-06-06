@@ -11,5 +11,12 @@
     マイページ
   <% end %>
   <%= current_user.display_name %>
+  <%= link_to "投稿一覧", posts_path %>
+<!--ログイン前画面-->
+<% else %>
+  <%= link_to new_user_session_path, class: "nav-link gold btnripple3 mt-3" do %>
+    <i class="fas fa-sign-in-alt nisegold"></i>
+    ログイン
+  <% end %>
 <% end %>
 
