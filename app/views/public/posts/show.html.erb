@@ -1,5 +1,8 @@
 <div class = "row ml-5 mt-5">
   <!--ユーザーのプロフィール画像を表示-->
+  <%= link_to user_path(@post.user.id) do %>
+    <%= @post.user.display_name %>
+  <% end %>
   <%= image_tag @post.image, size: "200x200" %>
   <%= render "public/favorites/favorite", post: @post %>
   <%= @post.posted_text %>
