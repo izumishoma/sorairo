@@ -43,4 +43,9 @@ class User < ApplicationRecord
   #   (image.attached?) ? image : 'no_image.jpg'
   #   image.variant(resize_to_limit: [width, height]).processed
   # end
+  
+  # ユーザーの表示名と完全一致でヒット
+  def self.looks(search, word)
+    @user = User.where("display_name LIKE?", "#{word}")
+  end
 end

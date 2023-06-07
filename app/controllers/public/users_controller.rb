@@ -1,7 +1,7 @@
 class Public::UsersController < ApplicationController
   before_action :check_guest, only: [:destroy, :update]
 
-  
+
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
@@ -27,7 +27,7 @@ class Public::UsersController < ApplicationController
     favorites = Favorite.where(user_id: @user.id).pluck(:post_id)
     @favorite_posts = Post.find(favorites)
   end
-  
+
   # before_actionで呼び出し
   # ゲストユーザーの編集、削除を制限
   def check_guest

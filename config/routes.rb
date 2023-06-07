@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     end
     # ゲストログインパス
     post '/guests/guest_sign_in', to: 'guests#new_guest'
+    # 検索パス
+    get "search" => "searches#search"
     root to: 'homes#top'
   end
 
