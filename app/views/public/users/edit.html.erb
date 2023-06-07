@@ -1,4 +1,8 @@
 <%= flash[:alert] %>
+<% if current_user.email == 'guest@example.com' %>
+  <p>ゲストユーザーはユーザー情報の編集が出来ないようになっています。</p>
+<% end %>
+
 <h2>ユーザー情報編集</h2>
 
 <%= form_with model: @user,id: 'new_user', class: 'new_user' do |f| %>

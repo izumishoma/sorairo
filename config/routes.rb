@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # 管理者側のルーティング設定
   namespace :admin do
     resources :users, only:[:index, :show]
+    post '/guests/guest_sign_in', to: 'guests#new_guest'
   end
 
    # ユーザー側のルーティング設定
@@ -13,15 +14,17 @@ Rails.application.routes.draw do
       resources :comments, only:[:create, :destroy]
     end
     resources :users, only:[:show, :edit, :update]do
-      # ユーザーのルートにいいね一覧画面をネスト
+      # ユーザーのパスにいいね一覧画面をネスト
       member do
         get 'favorites'
       end
-    # ユーザーのルートにフォロー、フォロワーをネスト
+    # ユーザーのパスにフォロー、フォロワーをネスト
       resource :relationships, only:[:create, :destroy]
       get 'followings' => 'relationships#followings', as: 'followings'
       get 'followers' => 'relationships#followers', as: 'followers'
     end
+    # ゲストログインパス
+    post '/guests/guest_sign_in', to: 'guests#new_guest'
     root to: 'homes#top'
   end
 
