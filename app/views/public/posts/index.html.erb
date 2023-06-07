@@ -9,7 +9,9 @@
       <%= link_to post_path(post.id) do %>
         <%= image_tag post.image, size: "200x200" %><br>
       <% end %>
-      <%= render "public/favorites/favorite", post: post %>
+      <div id="favorite_<%= post.id %>">
+        <%= render "public/favorites/favorite", post: post %>
+      </div>
       <%= post.posted_text %>
     </div>
   <% end %>
