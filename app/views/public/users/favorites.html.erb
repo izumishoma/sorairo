@@ -1,0 +1,9 @@
+いいね一覧
+<% @favorite_posts.each do |post|%>
+  <div class = "row ml-5 mt-5">
+    <%= link_to post_path(post.id) do %>
+      <%= image_tag post.image, size: "200x200" %><br>
+    <% end %>
+    <%= post.posted_text %>
+  </div>
+<% end %>

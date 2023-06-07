@@ -8,4 +8,8 @@ class Post < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :favorited_users, through: :favorites, source: :user
   belongs_to :user, optional: true
+  # ログイン中のユーザーがその投稿に対していいねをしているかを判断する
+  def favorited?(user)
+   favorites.where(user_id: user.id).exists?
+  end
 end
