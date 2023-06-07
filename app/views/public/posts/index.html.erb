@@ -2,10 +2,13 @@
 
   <% @posts. each do |post| %>
     <div class = "row ml-5 mt-5">
-    <%= link_to post_path(post.id) do %>
-      <%= image_tag post.image, size: "200x200" %><br>
-    <% end %>
-    <%= render "public/favorites/favorite", post: post %>
-    <%= post.posted_text %>
+      <%= link_to user_path(post.user.id) do %>
+        <%= post.user.display_name %>
+      <% end %>
+      <%= link_to post_path(post.id) do %>
+        <%= image_tag post.image, size: "200x200" %><br>
+      <% end %>
+      <%= render "public/favorites/favorite", post: post %>
+      <%= post.posted_text %>
     </div>
   <% end %>
