@@ -12,4 +12,9 @@ class Post < ApplicationRecord
   def favorited?(user)
    favorites.where(user_id: user.id).exists?
   end
+  
+  # 投稿文の内容と部分的に一致してればヒット
+  def self.looks(search, word)
+    @post = Post.where("posted_text LIKE?", "%#{word}%")
+  end
 end

@@ -4,7 +4,7 @@
 <% if admin_signed_in? %>
   <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "nav-link gold btnripple3 mt-3" %>
   <p>管理者ログイン中</p>
-<!--顧客がログインしていたら-->
+<!--ユーザーがログインしていたら-->
 <% elsif user_signed_in? %>
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link gold btnripple3 mt-3" %>
   <%= link_to user_path(current_user.id), class: "nav-link gold btnripple3 mt-3" do %>
@@ -13,6 +13,7 @@
   <% end %>
   <%= current_user.display_name %>
   <%= link_to "投稿一覧", posts_path %>
+  <%= render 'public/searches/search' %>
 <!--ログイン前画面-->
 <% else %>
   <%= link_to new_user_session_path, class: "nav-link gold btnripple3 mt-3" do %>
