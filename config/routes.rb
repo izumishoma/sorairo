@@ -12,8 +12,12 @@ Rails.application.routes.draw do
       resource :favorites, only:[:create, :destroy]
       resources :comments, only:[:create, :destroy]
     end
-    # ユーザーのルートにフォロー、フォロワーをネスト
     resources :users, only:[:show, :edit, :update]do
+      # ユーザーのルートにいいね一覧画面をネスト
+      member do
+        get 'favorites'
+      end
+    # ユーザーのルートにフォロー、フォロワーをネスト
       resource :relationships, only:[:create, :destroy]
       get 'followings' => 'relationships#followings', as: 'followings'
       get 'followers' => 'relationships#followers', as: 'followers'
