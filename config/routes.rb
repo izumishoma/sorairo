@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     # 検索パス
     get "search" => "searches#search"
     root to: 'homes#top'
+    
   end
 
   # 管理者用
@@ -37,11 +38,19 @@ Rails.application.routes.draw do
   }
 
   # ユーザー用
-  # URL /customers/sign_in ...
+  # URL /user/sign_in ...
   devise_for :user, skip: [:passwords], controllers:{
     registrations: "public/registrations",
     sessions: 'public/sessions'
   }
+  # devise_scope :users do
+  #   get 'user/sign_up' => 'public/registrations#new', as: 'new_user_registration'
+  #   post 'user/sign_up' => 'public/registrations#create', as: 'user_registration'
+  #   get 'user/sign_in' => 'public/sessions#new', as: 'new_user_session'
+  #   post 'user/sign_in' => 'public/sessions#create', as: 'user_session'
+  #   delete 'user/sign_out' => 'public/sessions#destroy', as: 'destroy_user_session'
+  # end
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 end
