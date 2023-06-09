@@ -1,11 +1,9 @@
 
 <%= link_to new_user_registration_path, class: "nav-link gold btnripple3 mt-3" do %>
-  <i class="fas fa-user-edit nisegold"></i>
-  新規登録
+  <i class="fas fa-user-edit nisegold"><%= I18n.t('top.sign_up') %></i>
 <% end %>
 
 <%= link_to new_user_session_path, class: "nav-link gold btnripple3 mt-3" do %>
-  <i class="fas fa-sign-in-alt nisegold"></i>
-  ログイン
+  <i class="fas fa-sign-in-alt nisegold"><%= I18n.t('top.sign_in') %></i>
 <% end %>
 
