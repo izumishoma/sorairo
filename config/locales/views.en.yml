@@ -6,3 +6,19 @@ en:
     guest_sign_in: "Guest SignIn"
     sign_out: "Sign Out"
     my_page: "My Page"
+  top:
+    sign_up: "Sign Up"
+    sign_in: "Sign In"
+  search:
+    user: "user"
+    post: "post"
+    search: "search"
+  user:
+    introduction: "introduction"
+    like_list: "Like List"
+    edit: "Edit"
+    follow: "Follow"
+    follower: "Follower"
+    guest_user: "Guest users cannot edit"
+    user_edit: "User Edit"
+    edit_update: "Update"

@@ -6,3 +6,19 @@ ja:
     guest_sign_in: "ゲストログイン"
     sign_out: "ログアウト"
     my_page: "マイページ"
+  top:
+    sign_up: "新規登録"
+    sign_in: "ログイン"
+  search:
+    user: "ユーザー"
+    post: "投稿"
+    search: "検索"
+  user:
+    introduction: "紹介文"
+    like_list: "いいね一覧"
+    edit: "編集"
+    follow: "フォロー"
+    follower: "フォロワー"
+    guest_user: "ゲストユーザーは編集が出来ないようになっています。"
+    user_edit: "ユーザー編集"
+    edit_update: "更新"

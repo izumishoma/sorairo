@@ -1,9 +1,9 @@
 <%= flash[:alert] %>
 <% if current_user.email == 'guest@example.com' %>
-  <p>ゲストユーザーはユーザー情報の編集が出来ないようになっています。</p>
+  <%= I18n.t('user.guest_user') %>
 <% end %>
 
-<h2>ユーザー情報編集</h2>
+<h2><%= I18n.t('user.user_edit') %></h2>
 
 <%= form_with model: @user,id: 'new_user', class: 'new_user' do |f| %>
 
@@ -32,7 +32,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit I18n.t('user.edit_update') %>
   </div>
 <% end %>
 
