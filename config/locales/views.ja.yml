@@ -13,6 +13,7 @@ ja:
     user: "ユーザー"
     post: "投稿"
     search: "検索"
+    search_results: "検索結果"
   user:
     introduction: "紹介文"
     like_list: "いいね一覧"

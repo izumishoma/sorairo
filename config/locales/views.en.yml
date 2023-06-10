@@ -13,6 +13,7 @@ en:
     user: "user"
     post: "post"
     search: "search"
+    search_results: "Search Results"
   user:
     introduction: "introduction"
     like_list: "Like List"
@@ -36,7 +37,7 @@ en:
   comment:
     comment_delete: "Comment Delete"
     comment_create: "To Comment"
-  registrations: 
+  registrations:
     sign_up: "Sign Up"
   sessions:
     sign_in: "Sign In"
