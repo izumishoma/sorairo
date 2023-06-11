@@ -1,4 +1,5 @@
 <%= flash[:alert] %>
+<!--ログインしているのがゲストユーザーならテキストを表示-->
 <% if current_user.email == 'guest@example.com' %>
   <%= I18n.t('user.guest_user') %>
 <% end %>
@@ -8,6 +9,8 @@
 <%= form_with model: @user,id: 'new_user', class: 'new_user' do |f| %>
 
   <div class="field">
+    <%= f.label :profile_image %><br>
+    <img id="profile_image_preview" style="width:20%;"><br>
     <%= f.file_field :profile_image, accept: "image/*" %>
   </div>
 
@@ -36,3 +39,12 @@
   </div>
 <% end %>
 
+<script>
+  $('#user_profile_image').on('change', function (e) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        $("#profile_image_preview").attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
+});
+</script>

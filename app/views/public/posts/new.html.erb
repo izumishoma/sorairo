@@ -1,11 +1,33 @@
-<%= form_with model: @post do |f| %>
-  <div class="field">
-    <%= f.file_field :image, accept: "image/*" %>
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <%= render "public/users/info", user: current_user %>
+    </div>
+    <div class='col-md-1'></div>
+    <div class='col-md-8'>
+      <%= form_with model: @post do |f| %>
+        <div class="field">
+          <%= f.label :image %><br>
+          <img id="image_preview" style="width:40%;"><br>
+          <%= f.file_field :image, accept: "image/*" %>
+        </div>
+        <div class="field">
+          <%= f.label :posted_text %>
+          <%= f.text_field :posted_text, class: 'form-control' %>
+        </div>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+        <%= f.submit I18n.t('post.post_create'), class: 'btn btn-success' %>
+      <% end %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :posted_text %>
-    <%= f.text_field :posted_text, class: 'form-control' %>
-  </div>
-  <%= f.hidden_field :user_id, :value => current_user.id %>
-  <%= f.submit class: 'btn btn-success' %>
-<% end %>
+</div>
+
+<script>
+  $('#post_image').on('change', function (e) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        $("#image_preview").attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
+});
+</script>

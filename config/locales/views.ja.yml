@@ -13,12 +13,31 @@ ja:
     user: "ユーザー"
     post: "投稿"
     search: "検索"
+    search_results: "検索結果"
   user:
     introduction: "紹介文"
     like_list: "いいね一覧"
     edit: "編集"
     follow: "フォロー"
     follower: "フォロワー"
+    follow_us: "フォローする"
+    unfollow: "フォロー外す"
+    follow_count: "フォロー数"
+    follower_count: "フォロワー数"
+    no_follow: "フォロー中のアカウントはありません"
+    no_follower: "フォロワーはいません"
     guest_user: "ゲストユーザーは編集が出来ないようになっています。"
     user_edit: "ユーザー編集"
     edit_update: "更新"
+  post:
+    post: "投稿する"
+    posts_list: "投稿一覧"
+    post_delete: "投稿削除"
+    post_create: "投稿する"
+  comment:
+    comment_delete: "コメント削除"
+    comment_create: "コメントする"
+  registrations: 
+    sign_up: "新規登録"
+  sessions:
+    sign_in: "ログイン"

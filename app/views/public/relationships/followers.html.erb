@@ -1,1 +1,5 @@
-<%= render "follow_list", users: @users %>
+<% if @users.exists? %>
+  <%= render "follow_list", users: @users %>
+<% else %>
+  <p><%= I18n.t('user.no_follower') %></p>
+<% end %>

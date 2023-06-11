@@ -13,12 +13,31 @@ en:
     user: "user"
     post: "post"
     search: "search"
+    search_results: "Search Results"
   user:
     introduction: "introduction"
     like_list: "Like List"
     edit: "Edit"
     follow: "Follow"
     follower: "Follower"
+    follow_us: "Follow us"
+    unfollow: "unfollow"
+    follow_count: "Follow Count"
+    follower_count: "Follower Count"
+    no_follow: "No Follow"
+    no_follower: "No Follower"
     guest_user: "Guest users cannot edit"
     user_edit: "User Edit"
     edit_update: "Update"
+  post:
+    post: "Post"
+    posts_list: "Post List"
+    post_delete: "Post Delete"
+    post_create: "To Post"
+  comment:
+    comment_delete: "Comment Delete"
+    comment_create: "To Comment"
+  registrations:
+    sign_up: "Sign Up"
+  sessions:
+    sign_in: "Sign In"

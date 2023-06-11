@@ -1,0 +1,8 @@
+<div class = "row">
+  <%= form_with model: [post, comment]  do |f| %>
+    <%= f.text_area :comment, placeholder: 'コメント' %><br>
+    <%= f.hidden_field :post_id, value: post.id %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.submit I18n.t('comment.comment_create') %>
+  <% end %>
+</div>

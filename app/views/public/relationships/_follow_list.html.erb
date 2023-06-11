@@ -1,6 +1,5 @@
-<% if users.exists? %>
   <% users.each do |user| %>
-    <table>
+    <table class = "table">
       <thead>
         <tr>
           <th>name</th>
@@ -10,13 +9,14 @@
       </thead>
       <tbody>
         <tr>
-          <td><%= user.display_name %></td>
-          <td>フォロー数: <%= user.followings.count %></td>
-          <td>フォロワー数: <%= user.followers.count %></td>
+          <td>
+            <%= link_to user_path(user.id) do %>
+              <%= user.display_name %>
+            <% end %>
+          </td>
+          <td><%= I18n.t('user.follow_count') %>: <%= user.followings.count %></td>
+          <td><%= I18n.t('user.follower_count') %>: <%= user.followers.count %></td>
         </tr>
       </tbody>
     </table>
   <% end %>
-<% else %>
-  <p>ユーザーはいません</p>
-<% end %>
