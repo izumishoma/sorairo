@@ -1,0 +1,20 @@
+<% posts.reverse.each do |post| %>
+  <div class = "my-5">
+    <div>
+      <%= link_to user_path(post.user.id) do %>
+        <%= post.user.display_name %>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to post_path(post.id) do %>
+        <%= image_tag post.image, size: "200x200" %>
+      <% end %>
+    </div>
+    <div>
+      <div id="favorite_<%= post.id %>">
+        <%= render "public/favorites/favorite", post: post %>
+      </div>
+      <%= post.posted_text %>
+    </div>
+  </div>
+<% end %>

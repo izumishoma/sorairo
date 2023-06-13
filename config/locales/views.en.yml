@@ -1,14 +1,12 @@
 en:
   header:
     posts_list: "Post List"
-    sign_up: "Sign Up"
-    sign_in: "Sign In"
-    guest_sign_in: "Guest SignIn"
     sign_out: "Sign Out"
     my_page: "My Page"
   top:
     sign_up: "Sign Up"
     sign_in: "Sign In"
+    guest_sign_in: "Guest SignIn"
   search:
     user: "user"
     post: "post"

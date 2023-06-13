@@ -1,9 +1,13 @@
-<%= I18n.t('user.like_list') %>
-<% @favorite_posts.each do |post|%>
-  <div class = "row ml-5 mt-5">
-    <%= link_to post_path(post.id) do %>
-      <%= image_tag post.image, size: "200x200" %><br>
-    <% end %>
-    <%= post.posted_text %>
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <%= render "public/users/info", user: current_user %>
+    </div>
+    <div class='col-md-1'></div>
+
+    <div class='col-md-8 lm-5'>
+      <%= I18n.t('user.like_list') %>
+      <%= render "public/posts/index", posts: @favorite_posts %>
+    </div>
   </div>
-<% end %>
+</div>

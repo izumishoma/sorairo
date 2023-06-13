@@ -1,18 +1,16 @@
-<table>
   <% comments.each do |comment| %>
-    <tr>
+    <div class = "container">
       <!--コメントの内容が表示される-->
-      <td><%= comment.user.display_name %></td>
-    </tr>
-    <tr>
-      <td><%= comment.comment %></td>
-    </tr>
-    <tr>
-      <td>
-        <% if comment.user == current_user %>
-          <%= link_to I18n.t('comment.comment_delete'), post_comment_path(comment.post,comment), method: :delete, class: "btn btn-sm btn-danger"   %>
-        <% end %>
-      </td>
-    </tr>
+      <div class = "row my-3">
+        <%= comment.user.display_name %>
+      </div>
+      <div class = "row">
+        <%= comment.comment %>
+        <div class = "ml-auto">
+          <% if comment.user == current_user %>
+            <%= link_to I18n.t('comment.comment_delete'), post_comment_path(comment.post,comment), method: :delete, class: "btn btn-sm btn-danger"   %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   <% end %>
-</table>

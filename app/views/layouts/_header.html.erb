@@ -1,29 +1,46 @@
+<div class= " bg-info text-white">
+  <div class= "container">
+    <div class = "row">
+      <div class = "mx-auto mt-3">
+        <h1>sorairo</h1>
+      </div>
+    </div>
+    <div class = "row">
+        <% if I18n.locale == :en %>
+          <%= link_to "日本語", url_for(locale: :ja), class: "text-white" %>
+        <% else %>
+          <%= link_to 'English', url_for(locale: :en), class: "text-white" %>
+        <% end %>
+    </div>
+  </div>
+</div>
+<div class = "row mt-2">
+  <!--管理者がログインしていたら-->
+  <% if admin_signed_in? %>
+    <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "nav-link" %>
+    <p>管理者ログイン中</p>
+  <!--ユーザーがログインしていたら-->
+  <% elsif user_signed_in? %>
+    <!--ログイン中のユーザーの名前表示-->
+    <!--<%#= current_user.display_name %>ログイン中-->
+      <div class = "row m-auto">
+        <!--マイページのリンク-->
+        <%= link_to user_path(current_user.id), class: "nav-link" do %>
+          <i class="fas fa-user-cog nisegold"><%= I18n.t('header.my_page') %></i>
+        <% end %>
+        <!--投稿一覧のリンク-->
+        <%= link_to posts_path, class: "nav-link" do %>
+          <%= I18n.t('header.posts_list') %>
+        <% end %>
+        <!--ログアウトのリンク-->
+        <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
+           <%= I18n.t('header.sign_out') %>
+        <% end %>
+        <!--検索バーの表示-->
+        <div>
+          <%= render 'public/searches/search' %>
+        </div>
+      </div>
 
-
-<!--管理者がログインしていたら-->
-<% if admin_signed_in? %>
-  <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "nav-link gold btnripple3 mt-3" %>
-  <p>管理者ログイン中</p>
-<!--ユーザーがログインしていたら-->
-<% elsif user_signed_in? %>
-  <%= link_to destroy_user_session_path, method: :delete, class: "nav-link gold btnripple3 mt-3" do %>
-     <%= I18n.t('header.sign_out') %>
   <% end %>
-  <%= link_to user_path(current_user.id), class: "nav-link gold btnripple3 mt-3" do %>
-    <i class="fas fa-user-cog nisegold"><%= I18n.t('header.my_page') %></i>
-  <% end %>
-  <%= current_user.display_name %>
-  <%= link_to posts_path do %>
-    <%= I18n.t('header.posts_list') %>
-  <% end %>
-  <%= render 'public/searches/search' %>
-<!--ログイン前画面-->
-<% else %>
-  <%= link_to new_user_session_path, class: "nav-link gold btnripple3 mt-3" do %>
-    <i class="fas fa-sign-in-alt nisegold"><%= I18n.t('header.sign_in') %></i>
-  <% end %>
-  <%= link_to guests_guest_sign_in_path, method: :post, class: "nav-link gold btnripple3 mt-3" do %>
-    <i class="fas fa-sign-in-alt nisegold"><%= I18n.t('header.guest_sign_in') %></i>
-  <% end %>
-<% end %>
-
+</div>
