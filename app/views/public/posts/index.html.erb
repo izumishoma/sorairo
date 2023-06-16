@@ -1,5 +1,8 @@
 <%= flash[:notice] %>
-<%= link_to I18n.t('post.post'), new_post_path %>
+<!--投稿のリンク-->
+<%= link_to new_post_path do %>
+  <i class="fas fa-plus-circle fa-3x", id = "post-plus"></i>
+<% end %>
 
 <div class='container px-5 px-sm-0'>
   <div class='row'>
