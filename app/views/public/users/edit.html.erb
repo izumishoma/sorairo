@@ -11,23 +11,26 @@
 
     <%= form_with model: @user,id: 'new_user', class: 'new_user' do |f| %>
       <div class="field">
-        <%= f.label :profile_image %><br>
+        <%= I18n.t('user.profile_image') %><br>
         <img id="profile_image_preview" style="width:200px; height:200px;"><br>
-        <%= f.file_field :profile_image, accept: "image/*" %>
+        <label class = "btn-outline-primary">
+          <i class="fas fa-portrait"></i><%= I18n.t('user.user_file') %>
+          <%= f.file_field :profile_image, accept: "image/*" %>
+        </label>
       </div>
 
       <div class="field">
-        <%= f.label :name %><br />
-        <%= f.text_field :name, autofocus: true, placeholder: "令和太郎" %>
+        <%= I18n.t('user.name') %><br/>
+        <%= f.text_field :name, autofocus: true, placeholder: true %>
       </div>
 
       <div class="field">
-        <%= f.label :display_name %><br />
-        <%= f.text_field :display_name, autofocus: true, placeholder: "レイタ"%>
+        <%= I18n.t('user.display_name') %><br />
+        <%= f.text_field :display_name, autofocus: true, placeholder: true %>
       </div>
 
       <div class="field">
-        <%= f.label :introduction %><br />
+        <%= I18n.t('user.introduction') %><br />
         <%= f.text_field :introduction, autofocus: true, placeholder: "紹介文"%>
       </div>
 

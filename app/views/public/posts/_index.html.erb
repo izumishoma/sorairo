@@ -7,7 +7,7 @@
     </div>
     <div>
       <%= link_to post_path(post.id) do %>
-        <%= image_tag post.image, size: "200x200" %>
+        <%= image_tag post.image, size: "300x300" %>
       <% end %>
     </div>
     <div>
@@ -17,4 +17,9 @@
       <%= post.posted_text %>
     </div>
   </div>
+<% end %>
+
+<!--投稿のリンク-->
+<%= link_to new_post_path do %>
+  <i class="fas fa-plus-circle fa-3x", id = "post-plus"></i>
 <% end %>

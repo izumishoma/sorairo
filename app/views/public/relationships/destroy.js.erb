@@ -1,1 +1,2 @@
-$('#relationship_<%= @user.id %>').html("<%= j(render "public/relationships/relationships", user: @user) %>");
+$("#relationship<%= @user.id %>").html("<%= j(render "public/relationships/relationships", user: @user) %>");
+$("#followers_count<%= @user.id %>").html("<%= j(render "public/users/followers", user: @user) %>");
