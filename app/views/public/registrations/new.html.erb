@@ -1,41 +1,41 @@
-<h2><%= I18n.t('registrations.sign_up') %></h2>
+<div class = "m-auto">
+  <h2><%= I18n.t('registrations.sign_up') %></h2>
 
-<%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user' do |f| %>
-  <%= render "public/shared/error_messages", resource: resource %>
+  <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user' do |f| %>
+    <%= render "public/shared/error_messages", resource: resource %>
 
+    <div class="field">
+      <%= I18n.t('user.name') %><br />
+      <%= f.text_field :name, autofocus: true, placeholder: true %>
+    </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, placeholder: "令和太郎" %>
-  </div>
+    <div class="field">
+      <%= I18n.t('user.display_name') %><br />
+      <%= f.text_field :display_name, autofocus: true, placeholder: true %>
+    </div>
 
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, placeholder: "sample@example.com" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :display_name %><br />
-    <%= f.text_field :display_name, autofocus: true, placeholder: "レイタ"%>
-  </div>
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, placeholder: "sample@example.com" %>
-  </div>
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <div class="actions">
+      <%= f.submit I18n.t('registrations.sign_up') %>
+    </div>
+  <% end %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit I18n.t('registrations.sign_up') %>
-  </div>
-<% end %>
-
-<%= render "public/shared/links" %>
+  <%= render "public/shared/links" %>
+</div>

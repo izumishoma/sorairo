@@ -7,12 +7,15 @@
     <div class='col-md-8'>
       <%= form_with model: @post do |f| %>
         <div class="field">
-          <%= f.label :image %><br>
-          <img id="image_preview" style="width:40%;"><br>
-          <%= f.file_field :image, accept: "image/*" %>
+          <%= I18n.t('post.post_image') %><br>
+          <img id="image_preview" style="width:200px; height:200px;"><br>
+          <label class = "btn-outline-primary">
+            <i class="fa-regular fa-image"></i><%= I18n.t('post.post_file') %>
+            <%= f.file_field :image, accept: "image/*" %>
+          </label>
         </div>
         <div class="field">
-          <%= f.label :posted_text %>
+          <%= I18n.t('post.posted_text') %>
           <%= f.text_field :posted_text, class: 'form-control' %>
         </div>
         <%= f.hidden_field :user_id, :value => current_user.id %>

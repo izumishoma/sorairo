@@ -33,7 +33,7 @@
                 <%= I18n.t('user.edit') %>
               <% end %>
             <% else %>
-            <div id="relationship_<%= user.id %>">
+            <div id="relationship<%= user.id %>">
               <%= render "public/relationships/relationships", user: user %>
             </div>
             <% end %>
@@ -42,13 +42,11 @@
         <tr>
           <td>
             <%= link_to user_followings_path(user.id) do %>
-              <%= I18n.t('user.follow') %>
+              <%= I18n.t('user.follow') %> <%= user.followings.count %>
             <% end %>
           </td>
-          <td>
-            <%= link_to user_followers_path(user.id) do %>
-              <%= I18n.t('user.follower') %>
-            <% end %>
+          <td id="followers_count<%= user.id %>">
+            <%= render "public/users/followers", user: user %>
           </td>
         </tr>
       </table>
