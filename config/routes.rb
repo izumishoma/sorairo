@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
+    
+  patch 'languages/language'
+
 
   # 管理者側のルーティング設定
   namespace :admin do
@@ -29,7 +32,6 @@ Rails.application.routes.draw do
     # 検索パス
     get "search" => "searches#search"
     root to: 'homes#top'
-    
   end
 
   # 管理者用
