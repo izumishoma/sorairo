@@ -1,0 +1,13 @@
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <%= render "public/users/info", user: current_user %>
+    </div>
+    <div class='col-md-1'></div>
+
+    <div class='col-md-8'>
+      <%= I18n.t('user.like_list') %>
+      <%= render "public/posts/index", posts: @favorite_posts %>
+    </div>
+  </div>
+</div>

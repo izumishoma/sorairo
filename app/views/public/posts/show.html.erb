@@ -1,2 +1,39 @@
-<h1>Public::Posts#show</h1>
-<p>Find me in app/views/public/posts/show.html.erb</p>
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <%= render "public/users/info", user: current_user %>
+    </div>
+    <div class='col-md-1'></div>
+    <div class='col-md-8'>
+      <h2>投稿詳細</h2>
+      <div class = "row mt-3">
+        <%= link_to user_path(@post.user.id) do %>
+          <%= @post.user.display_name %>
+        <% end %>
+      </div>
+      <div class = "row my-3">
+        <!--ユーザーのプロフィール画像を表示-->
+        <%= image_tag @post.image, size: "200x200" %>
+      </div>
+      <div class = "row">
+        <div id="favorite_<%= @post.id %>">
+          <%= render "public/favorites/favorite", post: @post %>
+        </div>
+      </div>
+      <div class = "row">
+        <%= @post.posted_text %>
+      </div>
+      <div class = "row">
+        <% if @post.user == current_user %>
+          <%= link_to I18n.t('post.post_delete'), post_path(@post.id), method: :delete, class: "btn btn-sm btn-danger" %>
+        <% end %>
+      </div>
+      <div class = "row mt-5">
+        <%= render "public/comments/comment", comments: @comments %>
+      </div>
+      <div class = "row mt-5 ml-1">
+        <%= render "public/comments/form", post: @post, comment: @comment %>
+      </div>
+    </div>
+  </div>
+</div>

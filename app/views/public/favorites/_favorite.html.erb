@@ -1,0 +1,11 @@
+<% if post.favorited?(current_user) %>
+    <!--すでにいいね済みの場合はdestroyアクションへ-->
+    <%= link_to post_favorites_path(post.id), method: :delete, remote: true do %>
+        <span>❤️<%= post.favorites.count %>︎</span>
+    <% end %>
+<% else %>
+    <!--まだいいねしていない場合はcreateアクションへ-->
+    <%= link_to post_favorites_path(post.id), method: :post, remote: true do %>
+        <span>♡<%= post.favorites.count %>︎</span>
+    <% end %>
+<% end %>

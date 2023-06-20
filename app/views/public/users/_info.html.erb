@@ -1,0 +1,54 @@
+
+  <div class = "row ml-5 mt-5">
+    <div class = "row">
+      <!--ユーザーのプロフィール画像を表示-->
+      <%= image_tag user.get_profile_image, size: "200x200" %>
+    </div>
+    <div class = "row">
+      <table class = "table">
+        <tr>
+          <td><%= user.display_name %></td>
+        </tr>
+        <tr>
+          <td>
+            <% if user.introduction == nil %>
+              <%= I18n.t('user.introduction') %>
+            <% else %>
+              <%= user.introduction %>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= link_to  favorites_user_path(user.id) do %>
+              <%= I18n.t('user.like_list') %>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <!--マイページなら編集、マイページ以外ならフォローするを表示-->
+            <% if user == current_user %>
+              <%= link_to edit_user_path(current_user.id) do %>
+                <%= I18n.t('user.edit') %>
+              <% end %>
+            <% else %>
+            <div id="relationship<%= user.id %>">
+              <%= render "public/relationships/relationships", user: user %>
+            </div>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= link_to user_followings_path(user.id) do %>
+              <%= I18n.t('user.follow') %> <%= user.followings.count %>
+            <% end %>
+          </td>
+          <td id="followers_count<%= user.id %>">
+            <%= render "public/users/followers", user: user %>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>

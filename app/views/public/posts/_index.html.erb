@@ -1,0 +1,25 @@
+<% posts.reverse.each do |post| %>
+  <div class = "my-5">
+    <div>
+      <%= link_to user_path(post.user.id) do %>
+        <%= post.user.display_name %>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to post_path(post.id) do %>
+        <%= image_tag post.image, size: "300x300" %>
+      <% end %>
+    </div>
+    <div>
+      <div id="favorite_<%= post.id %>">
+        <%= render "public/favorites/favorite", post: post %>
+      </div>
+      <%= post.posted_text %>
+    </div>
+  </div>
+<% end %>
+
+<!--投稿のリンク-->
+<%= link_to new_post_path do %>
+  <i class="fas fa-plus-circle fa-3x", id = "post-plus"></i>
+<% end %>

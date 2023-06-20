@@ -1,0 +1,54 @@
+ja:
+  header:
+    posts_list: "投稿一覧"
+    sign_up: "新規登録"
+    sign_in: "ログイン"
+    sign_out: "ログアウト"
+    my_page: "マイページ"
+    sign_up: "新規登録"
+    sign_in: "ログイン"
+    guest_sign_in: "ゲストログイン"
+  search:
+    user: "ユーザー"
+    post: "投稿"
+    search: "検索"
+    search_results: "検索結果"
+  helpers:
+    placeholder:
+      user:
+        name: "山田　太郎"
+        display_name: "タロウ"
+  user:
+    name: "名前"
+    display_name: "表示名"
+    introduction: "紹介文"
+    profile_image: "プロフィール画像"
+    user_file: "画像を選択"
+    like_list: "いいね一覧"
+    edit: "編集"
+    follow: "フォロー"
+    follower: "フォロワー"
+    follow_us: "フォローする"
+    unfollow: "フォロー外す"
+    follow_count: "フォロー数"
+    follower_count: "フォロワー数"
+    no_follow: "フォロー中のアカウントはありません"
+    no_follower: "フォロワーはいません"
+    guest_user: "ゲストユーザーは編集が出来ないようになっています。"
+    user_edit: "ユーザー編集"
+    edit_update: "更新"
+  post:
+    post: "投稿する"
+    post_file: "ファイルを選択"
+    posts_list: "投稿一覧"
+    post_delete: "投稿削除"
+    post_create: "投稿する"
+    post_image: "投稿画像"
+    posted_text: "投稿文"
+  comment:
+    comment_delete: "コメント削除"
+    comment_create: "コメントする"
+  registrations:
+    sign_up: "新規登録"
+  sessions:
+    sign_in: "ログイン"

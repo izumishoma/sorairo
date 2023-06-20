@@ -1,0 +1,57 @@
+<div class = "row">
+  <div class = "col-md-4"></div>
+  <div class = "col-md-6">
+    <h2><%= I18n.t('user.user_edit') %></h2>
+
+    <%= flash[:alert] %>
+    <!--ログインしているのがゲストユーザーならテキストを表示-->
+    <% if current_user.email == 'guest@example.com' %>
+      <%= I18n.t('user.guest_user') %>
+    <% end %>
+
+    <%= form_with model: @user,id: 'new_user', class: 'new_user' do |f| %>
+      <div class="field">
+        <%= I18n.t('user.profile_image') %><br>
+        <img id="profile_image_preview" style="width:200px; height:200px;"><br>
+        <label class = "btn-outline-primary">
+          <i class="fas fa-portrait"></i><%= I18n.t('user.user_file') %>
+          <%= f.file_field :profile_image, accept: "image/*" %>
+        </label>
+      </div>
+
+      <div class="field">
+        <%= I18n.t('user.name') %><br/>
+        <%= f.text_field :name, autofocus: true, placeholder: true %>
+      </div>
+
+      <div class="field">
+        <%= I18n.t('user.display_name') %><br />
+        <%= f.text_field :display_name, autofocus: true, placeholder: true %>
+      </div>
+
+      <div class="field">
+        <%= I18n.t('user.introduction') %><br />
+        <%= f.text_field :introduction, autofocus: true, placeholder: "紹介文"%>
+      </div>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, placeholder: "sample@example.com" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit I18n.t('user.edit_update') %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  $('#user_profile_image').on('change', function (e) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        $("#profile_image_preview").attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
+});
+</script>

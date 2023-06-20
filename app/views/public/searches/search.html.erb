@@ -1,0 +1,44 @@
+<h2><%= I18n.t('search.search_results') %></h2>
+
+<table class="table table-hover table-inverse">
+  <!--Userの検索結果 -->
+  <% if @range == I18n.t('search.user') %>
+    <tbody>
+      <% if @users.count == 0 %>
+        <p>user検索結果はありません</p>
+      <% else %>
+        <% @users.each do |user| %>
+          <tr>
+            <td>
+              <%= image_tag user.get_profile_image, size: "50x50" %>
+            </td>
+            <td>
+              <%= link_to user_path(user.id) do %>
+                <%= user.display_name %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  <% else %>
+    <!--Postの検索結果 -->
+    <tbody>
+      <% if @posts.count == 0 %>
+        <p>post検索結果はありません</p>
+        <%= @range %>
+      <% else %>
+        <% @posts.each do |post| %>
+          <tr>
+            <td>
+              <%= link_to post_path(post.id) do %>
+                <%= image_tag post.image, size: "50x50"  %>
+              <% end %>
+            </td>
+            <td><%= post.posted_text %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  <% end %>
+</table>

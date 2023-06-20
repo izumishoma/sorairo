@@ -1,0 +1,56 @@
+<div class= "bg-info text-white">
+  <div class= "container">
+    <div class = "row">
+      <div class = "mx-auto mt-3">
+        <h1>sorairo</h1>
+      </div>
+    </div>
+    <div class = "row">
+      <% if I18n.locale == :en %>
+        <%= link_to "日本語にする", url_for(locale: :ja), class: "text-white" %>
+      <% else %>
+        <%= link_to 'Change to English', url_for(locale: :en), class: "text-white" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class = "row bg-light py-2">
+  <div class = "row m-auto">
+    <!--管理者がログインしていたら-->
+    <% if admin_signed_in? %>
+      <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "nav-link" %>
+      <p>管理者ログイン中</p>
+    <!--ユーザーがログインしていたら-->
+    <% elsif user_signed_in? %>
+      <!--マイページのリンク-->
+      <%= link_to user_path(current_user.id), class: "nav-link" do %>
+        <i class="fas fa-user-cog"></i><%= I18n.t('header.my_page') %>
+      <% end %>
+      <!--投稿一覧のリンク-->
+      <%= link_to posts_path, class: "nav-link" do %>
+        <i class="fas fa-home-alt"></i><%= I18n.t('header.posts_list') %>
+      <% end %>
+      <!--ログアウトのリンク-->
+      <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
+         <i class="fas fa-sign-out-alt"></i><%= I18n.t('header.sign_out') %>
+      <% end %>
+      <!--検索バーの表示-->
+      <div id = "search">
+        <%= render 'public/searches/search' %>
+      </div>
+    <% else %>
+      <!--新規登録のリンク-->
+      <%= link_to new_user_registration_path, class: "nav-link gold btnripple3" do %>
+        <i class="fas fa-user-edit"></i><%= I18n.t('header.sign_up') %>
+      <% end %>
+      <!--ログインのリンク-->
+      <%= link_to new_user_session_path, class: "nav-link gold btnripple3" do %>
+        <i class="fas fa-sign-in-alt"></i><%= I18n.t('header.sign_in') %>
+      <% end %>
+      <!--ゲストログインのリンク-->
+      <%= link_to guests_guest_sign_in_path, method: :post, class: "nav-link gold btnripple3" do %>
+        <i class="fas fa-sign-in"></i><%= I18n.t('header.guest_sign_in') %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

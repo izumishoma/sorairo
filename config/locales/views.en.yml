@@ -1,0 +1,52 @@
+en:
+  header:
+    posts_list: "Post List"
+    sign_out: "Sign Out"
+    my_page: "My Page"
+    sign_up: "Sign Up"
+    sign_in: "Sign In"
+    guest_sign_in: "Guest SignIn"
+  search:
+    user: "user"
+    post: "post"
+    search: "search"
+    search_results: "Search Results"
+  helpers:
+    placeholder:
+      user:
+        name: "John Smith"
+        display_name: "John"
+  user:
+    name: "name"
+    display_name: "display name"
+    introduction: "introduction"
+    profile_image: "profile image"
+    user_file: "Select image"
+    like_list: "Like List"
+    edit: "Edit"
+    follow: "Follow"
+    follower: "Follower"
+    follow_us: "Follow us"
+    unfollow: "unfollow"
+    follow_count: "Follow Count"
+    follower_count: "Follower Count"
+    no_follow: "No Follow"
+    no_follower: "No Follower"
+    guest_user: "Guest users cannot edit"
+    user_edit: "User Edit"
+    edit_update: "Update"
+  post:
+    post: "Post"
+    post_file: "Select files"
+    posts_list: "Post List"
+    post_delete: "Post Delete"
+    post_create: "To Post"
+    post_image: "Post image"
+    posted_text: "Posted text"
+  comment:
+    comment_delete: "Comment Delete"
+    comment_create: "To Comment"
+  registrations:
+    sign_up: "Sign Up"
+  sessions:
+    sign_in: "Sign In"

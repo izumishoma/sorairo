@@ -1,0 +1,22 @@
+  <% users.each do |user| %>
+    <table class = "table">
+      <thead>
+        <tr>
+          <th>name</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <%= link_to user_path(user.id) do %>
+              <%= user.display_name %>
+            <% end %>
+          </td>
+          <td><%= I18n.t('user.follow_count') %>: <%= user.followings.count %></td>
+          <td><%= I18n.t('user.follower_count') %>: <%= user.followers.count %></td>
+        </tr>
+      </tbody>
+    </table>
+  <% end %>
