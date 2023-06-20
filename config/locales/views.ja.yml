@@ -37,6 +37,7 @@ ja:
     guest_user: "ゲストユーザーは編集が出来ないようになっています。"
     user_edit: "ユーザー編集"
     edit_update: "更新"
+    posts_list: "ユーザーの投稿一覧"
   post:
     post: "投稿する"
     post_file: "ファイルを選択"

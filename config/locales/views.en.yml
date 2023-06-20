@@ -35,6 +35,7 @@ en:
     guest_user: "Guest users cannot edit"
     user_edit: "User Edit"
     edit_update: "Update"
+    posts_list: "User Post List"
   post:
     post: "Post"
     post_file: "Select files"
