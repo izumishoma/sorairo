@@ -13,10 +13,10 @@ class Public::UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update(user_params)
-      flash[:notice] = "登録情報を編集しました"
+      flash[:notice] = I18n.t('user.update_notice')
       redirect_to user_path(current_user.id)
     else
-      flash[:alert] = "編集に失敗しました"
+      flash[:alert] = I18n.t('user.update_alert')
       render :edit
     end
   end
@@ -31,7 +31,7 @@ class Public::UsersController < ApplicationController
   # ゲストユーザーの編集、削除を制限
   def check_guest
     if current_user.email == 'guest@example.com'
-      redirect_to edit_user_path(current_user), alert: 'ゲストユーザーの変更・削除はできません。'
+      redirect_to edit_user_path(current_user), alert: I18n.t('user.update_alert')
     end
   end
 

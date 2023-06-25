@@ -3,7 +3,7 @@
   <div class = "col-md-6">
     <h2><%= I18n.t('registrations.sign_up') %></h2>
 
-    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user' do |f| %>
+    <%= form_with model: @user, url: user_sign_up_path, id: 'new_user', class: 'new_user' do |f| %>
       <%= render "public/shared/error_messages", resource: resource %>
 
       <div class="field">
