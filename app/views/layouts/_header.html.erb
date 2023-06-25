@@ -1,11 +1,11 @@
 <div class= "bg-info text-white">
   <div class= "container">
     <div class = "row">
-      <div class = "mx-auto mt-3">
-        <h1>sorairo</h1>
+      <div class = "mx-auto mt-3 mb-2">
+        <h1><strong>sorairo</strong></h1>
       </div>
     </div>
-    <div class = "row">
+    <div id = "language_switch">
       <% if I18n.locale == :en %>
         <%= link_to "日本語にする", url_for(locale: :ja), class: "text-white" %>
       <% else %>
@@ -40,7 +40,7 @@
       </div>
     <% else %>
       <!--新規登録のリンク-->
-      <%= link_to new_user_registration_path, class: "nav-link gold btnripple3" do %>
+      <%= link_to user_sign_up_path, class: "nav-link gold btnripple3" do %>
         <i class="fas fa-user-edit"></i><%= I18n.t('header.sign_up') %>
       <% end %>
       <!--ログインのリンク-->
