@@ -1,16 +1,17 @@
 <% posts.reverse.each do |post| %>
-  <div class = "my-5">
-    <div>
+  <div class = "my-4 card" style="width: 552px;">
+    <div class = "card-header">
       <%= link_to user_path(post.user.id) do %>
+        <%= image_tag post.user.get_profile_image, size: "40x40" %>
         <%= post.user.display_name %>
       <% end %>
     </div>
-    <div>
+    <div class = "card-img-top">
       <%= link_to post_path(post.id) do %>
-        <%= image_tag post.image, size: "300x300" %>
+        <%= image_tag post.image, size: "550x400" %>
       <% end %>
     </div>
-    <div>
+    <div class = "card-body">
       <div id="favorite_<%= post.id %>">
         <%= render "public/favorites/favorite", post: post %>
       </div>

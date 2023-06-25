@@ -10,24 +10,30 @@
 }
 
 #html{
-  margin-top: 190px;
+  margin-top: 170px;
   margin-bottom: 50px;
 }
 
 #post-plus{
   position: fixed;/*fixedを設定して固定*/
     z-index: 999;/*最前面へ*/
-    top:550px;/*位置指定*/
+    top:650px;/*位置指定*/
     left:1000px;/*位置指定*/
 }
 
 #search{
   position: fixed;/*fixedを設定して固定*/
     z-index: 999;/*最前面へ*/
-    top:105px;/*位置指定*/
-    right:20px;/*位置指定*/
+    top:89px;/*位置指定*/
+    right:30px;/*位置指定*/
 }
 
+#language_switch{
+  position: fixed;/*fixedを設定して固定*/
+    z-index: 999;/*最前面へ*/
+    top:55px;/*位置指定*/
+    left:75px;/*位置指定*/
+}
 
 
 input[type="file"] {

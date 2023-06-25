@@ -10,13 +10,16 @@
           <td><%= user.display_name %></td>
         </tr>
         <tr>
-          <td>
-            <% if user.introduction == nil %>
+          <!--自己紹介文があれば表示、なければ「紹介文」を半透明で表示-->
+          <% if user.introduction.blank? %>
+            <td class = "text-black-50" >
               <%= I18n.t('user.introduction') %>
-            <% else %>
+            </td>
+          <% else %>
+            <td>
               <%= user.introduction %>
-            <% end %>
-          </td>
+            </td>
+          <% end %>
         </tr>
         <tr>
           <td>

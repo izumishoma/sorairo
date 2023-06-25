@@ -5,25 +5,26 @@
     </div>
     <div class='col-md-1'></div>
     <div class='col-md-8'>
-      <h2>投稿詳細</h2>
-      <div class = "row mt-3">
-        <%= link_to user_path(@post.user.id) do %>
-          <%= @post.user.display_name %>
-        <% end %>
-      </div>
-      <div class = "row my-3">
-        <!--ユーザーのプロフィール画像を表示-->
-        <%= image_tag @post.image, size: "200x200" %>
-      </div>
-      <div class = "row">
-        <div id="favorite_<%= @post.id %>">
-          <%= render "public/favorites/favorite", post: @post %>
+      <h2><%= I18n.t('post.post_details') %></h2>
+      <div class = "mt-4 card" style="width: 552px;">
+        <div class = "card-header">
+          <%= link_to user_path(@post.user.id) do %>
+            <%= @post.user.display_name %>
+          <% end %>
+        </div>
+        <div class = "card-img-top">
+          <!--ユーザーのプロフィール画像を表示-->
+          <%= image_tag @post.image, size: "550x400" %>
+        </div>
+        <div class = "card-body">
+          <div id="favorite_<%= @post.id %>">
+            <%= render "public/favorites/favorite", post: @post %>
+          </div>
+          <%= @post.posted_text %>
         </div>
       </div>
-      <div class = "row">
-        <%= @post.posted_text %>
-      </div>
-      <div class = "row">
+
+      <div class = "row ml-1 mt-2">
         <% if @post.user == current_user %>
           <%= link_to I18n.t('post.post_delete'), post_path(@post.id), method: :delete, class: "btn btn-sm btn-danger" %>
         <% end %>
@@ -31,7 +32,7 @@
       <div class = "row mt-5">
         <%= render "public/comments/comment", comments: @comments %>
       </div>
-      <div class = "row mt-5 ml-1">
+      <div class = "row mt-5 ml-3">
         <%= render "public/comments/form", post: @post, comment: @comment %>
       </div>
     </div>
