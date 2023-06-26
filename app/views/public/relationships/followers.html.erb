@@ -1,5 +1,19 @@
 <% if @users.exists? %>
-  <%= render "follow_list", users: @users %>
+  <div class = "container">
+    <div class = "row">
+      <div class = "col-md-1"></div>
+      <div class = "col-md-10">
+        <table class = "table">
+          <tr>
+            <th><%= I18n.t('user.follower') %></th>
+            <th></th>
+            <th></th>
+          </tr>
+          <%= render "follow_list", users: @users %>
+        </table>
+      </div>
+    </div>
+  </div>
 <% else %>
   <p><%= I18n.t('user.no_follower') %></p>
 <% end %>
