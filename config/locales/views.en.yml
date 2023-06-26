@@ -6,6 +6,9 @@ en:
     sign_up: "Sign Up"
     sign_in: "Sign In"
     guest_sign_in: "Guest SignIn"
+    users: "users"
+    admin_sign_in: "Admin login"
+    admin: "Admin logged in"
   search:
     user: "user"
     post: "post"
@@ -36,6 +39,8 @@ en:
     posts_list: "User Post List"
     update_notice: "Edited registration information"
     update_alert: "edit failed"
+    users: "users"
+    user_details: "User details"
   post:
     post: "Post"
     post_file: "Select files"
@@ -53,3 +58,6 @@ en:
     sign_up: "Sign Up"
   sessions:
     sign_in: "Sign In"
+    admin_sign_in: "Admin Sign In"
+    e_mail: "Email"
+    password: "Password"

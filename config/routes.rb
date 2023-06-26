@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     # 管理者側のルーティング設定
     namespace :admin do
       resources :users, only:[:index, :show]
+      resources :posts, only:[:index, :show, :destroy]
       post '/guests/guest_sign_in', to: 'guests#new_guest'
     end
 
