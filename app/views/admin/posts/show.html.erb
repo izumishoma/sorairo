@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class = "row ml-1 mt-2">
-        <%= link_to I18n.t('post.post_delete'), post_path(@post.id), method: :delete, class: "btn btn-sm btn-danger" %>
+        <%= link_to I18n.t('post.post_delete'), admin_post_path(@post.id), method: :delete, class: "btn btn-sm btn-danger" %>
       </div>
       <div class = "row mt-5">
         <%= render "public/comments/comment", comments: @post.comments %>
