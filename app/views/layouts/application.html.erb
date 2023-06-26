@@ -12,7 +12,10 @@
 
   <body>
     <header id = "header"><%= render 'layouts/header' %></header>
-    <div id = "html"><%= flash[:notice] %><%= yield %></div>
+    <div id = "html">
+      <div class = "ml-5"><%= flash[:notice]%></div>
+      <%= yield %>
+    </div>
     <footer><%= render 'layouts/footer' %></footer>
   </body>
 </html>
