@@ -6,6 +6,9 @@ ja:
     sign_up: "新規登録"
     sign_in: "ログイン"
     guest_sign_in: "ゲストログイン"
+    users: "ユーザー一覧"
+    admin_sign_in: "管理者ログイン"
+    admin: "管理者ログイン中"
   search:
     user: "ユーザー"
     post: "投稿"
@@ -36,6 +39,8 @@ ja:
     posts_list: "ユーザーの投稿一覧"
     update_notice: "登録情報を編集しました"
     update_alert: "編集に失敗しました"
+    users: "ユーザー一覧"
+    user_details: "ユーザー詳細"
   post:
     post: "投稿する"
     post_file: "ファイルを選択"
@@ -53,3 +58,6 @@ ja:
     sign_up: "新規登録"
   sessions:
     sign_in: "ログイン"
+    admin_sign_in: "管理者ログイン"
+    e_mail: "Eメール"
+    password: "パスワード"
