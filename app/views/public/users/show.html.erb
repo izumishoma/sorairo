@@ -5,7 +5,7 @@
     </div>
     <div class='col-md-1'></div>
     <div class='col-md-8'>
-      <h2>ユーザーの投稿一覧</h2>
+      <h2><%= I18n.t('user.posts_list') %></h2>
       <%= render "public/posts/index", posts: @user.posts %>
     </div>
   </div>

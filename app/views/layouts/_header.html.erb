@@ -1,11 +1,11 @@
 <div class= "bg-info text-white">
   <div class= "container">
     <div class = "row">
-      <div class = "mx-auto mt-3">
-        <h1>sorairo</h1>
+      <div class = "mx-auto mt-3 mb-2">
+        <h1><strong>sorairo</strong></h1>
       </div>
     </div>
-    <div class = "row">
+    <div id = "language_switch">
       <% if I18n.locale == :en %>
         <%= link_to "日本語にする", url_for(locale: :ja), class: "text-white" %>
       <% else %>
@@ -18,8 +18,18 @@
   <div class = "row m-auto">
     <!--管理者がログインしていたら-->
     <% if admin_signed_in? %>
-      <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "nav-link" %>
-      <p>管理者ログイン中</p>
+      <div class = "text_center row">
+        <p id = "admin"><%= I18n.t('header.admin') %></p>
+        <%= link_to admin_users_path, class: "nav-link" do %>
+          <i class="fas fa-users"></i><%= I18n.t('header.users') %>
+        <% end %>
+        <%= link_to admin_posts_path, class: "nav-link" do %>
+          <i class="fas fa-home-alt"></i><%= I18n.t('header.posts_list') %>
+        <% end %>
+        <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link" do %>
+          <i class="fas fa-sign-out-alt"></i><%= I18n.t('header.sign_out') %>
+        <% end %>
+      </div>
     <!--ユーザーがログインしていたら-->
     <% elsif user_signed_in? %>
       <!--マイページのリンク-->
@@ -38,18 +48,22 @@
       <div id = "search">
         <%= render 'public/searches/search' %>
       </div>
+    <!--ログインしてなければ-->
     <% else %>
       <!--新規登録のリンク-->
-      <%= link_to new_user_registration_path, class: "nav-link gold btnripple3" do %>
+      <%= link_to user_sign_up_path, class: "nav-link" do %>
         <i class="fas fa-user-edit"></i><%= I18n.t('header.sign_up') %>
       <% end %>
       <!--ログインのリンク-->
-      <%= link_to new_user_session_path, class: "nav-link gold btnripple3" do %>
+      <%= link_to new_user_session_path, class: "nav-link" do %>
         <i class="fas fa-sign-in-alt"></i><%= I18n.t('header.sign_in') %>
       <% end %>
       <!--ゲストログインのリンク-->
-      <%= link_to guests_guest_sign_in_path, method: :post, class: "nav-link gold btnripple3" do %>
+      <%= link_to guests_guest_sign_in_path, method: :post, class: "nav-link" do %>
         <i class="fas fa-sign-in"></i><%= I18n.t('header.guest_sign_in') %>
+      <% end %>
+      <%= link_to admin_guests_guest_sign_in_path, method: :post, class: "nav-link" do %>
+        <i class="fas fa-user-secret"></i><%= I18n.t('header.admin_sign_in') %>
       <% end %>
     <% end %>
   </div>

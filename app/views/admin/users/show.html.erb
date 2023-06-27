@@ -1,6 +1,23 @@
-  <div class = "row ml-5 mt-5">
-    <!--ユーザーのプロフィール画像を表示-->
-    <%= image_tag @user.get_profile_image, size: "200x200" %>
-    <%= @user.display_name %>
-    <%= @user.introduction %>
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col-md-3'></div>
+    <div class='col-md-7'>
+      <h2 class = "ml-4"><%= I18n.t('user.user_details')%></h2>
+      <div class = "row ml-4 mt-5">
+        <table class = "table" >
+          <tr>
+            <td rowspan="2"><%= image_tag @user.get_profile_image, size: "200x200" %></td>
+            <td><%= I18n.t('user.name') %></td>
+            <td>
+                <%= @user.display_name %>
+            </td>
+          </tr>
+          <tr>
+            <td><%= I18n.t('user.introduction') %></td>
+            <td><%= @user.introduction %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </div>
+</div>

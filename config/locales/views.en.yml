@@ -6,6 +6,9 @@ en:
     sign_up: "Sign Up"
     sign_in: "Sign In"
     guest_sign_in: "Guest SignIn"
+    users: "users"
+    admin_sign_in: "Admin login"
+    admin: "Admin logged in"
   search:
     user: "user"
     post: "post"
@@ -28,17 +31,21 @@ en:
     follower: "Follower"
     follow_us: "Follow us"
     unfollow: "unfollow"
-    follow_count: "Follow Count"
-    follower_count: "Follower Count"
     no_follow: "No Follow"
     no_follower: "No Follower"
     guest_user: "Guest users cannot edit"
     user_edit: "User Edit"
     edit_update: "Update"
+    posts_list: "User Post List"
+    update_notice: "Edited registration information"
+    update_alert: "edit failed"
+    users: "users"
+    user_details: "User details"
   post:
     post: "Post"
     post_file: "Select files"
     posts_list: "Post List"
+    post_details: "Post details"
     post_delete: "Post Delete"
     post_create: "To Post"
     post_image: "Post image"
@@ -46,7 +53,13 @@ en:
   comment:
     comment_delete: "Comment Delete"
     comment_create: "To Comment"
+    comment: "Comment"
   registrations:
     sign_up: "Sign Up"
   sessions:
     sign_in: "Sign In"
+    admin_sign_in: "Admin Sign In"
+    e_mail: "Email"
+    password: "Password"
+  top:
+    sorairo: "welcome to sorairo"

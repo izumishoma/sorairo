@@ -19,9 +19,9 @@ class Admin::SessionsController < Devise::SessionsController
   # end
 
   # protected
-  #管理者ログアウト後ログイン画面に遷移
+  #管理者ログアウト後トップ画面に遷移
   def after_sign_out_path_for(resource)
-    new_admin_session_path
+    root_path
   end
 
   # 管理者ログイン後ユーザー一覧へ遷移

@@ -1,14 +1,11 @@
 <div class='container px-5 px-sm-0'>
   <div class='row'>
-    <div class='col-md-3'>
-      <%= render "public/users/info", user: current_user %>
-    </div>
-    <div class='col-md-1'></div>
+    <div class='col-md-3'></div>
     <div class='col-md-8'>
       <h2><%= I18n.t('post.post_details') %></h2>
       <div class = "mt-4 card" style="width: 552px;">
         <div class = "card-header">
-          <%= link_to user_path(@post.user.id) do %>
+          <%= link_to admin_user_path(@post.user.id) do %>
             <%= image_tag @post.user.get_profile_image, size: "40x40" %>
             <%= @post.user.display_name %>
           <% end %>
@@ -17,23 +14,14 @@
           <%= image_tag @post.image, size: "550x400" %>
         </div>
         <div class = "card-body">
-          <div id="favorite_<%= @post.id %>">
-            <%= render "public/favorites/favorite", post: @post %>
-          </div>
           <%= @post.posted_text %>
         </div>
       </div>
-
       <div class = "row ml-1 mt-2">
-        <% if @post.user == current_user %>
-          <%= link_to I18n.t('post.post_delete'), post_path(@post.id), method: :delete, class: "btn btn-sm btn-danger" %>
-        <% end %>
+        <%= link_to I18n.t('post.post_delete'), admin_post_path(@post.id), method: :delete, class: "btn btn-sm btn-danger" %>
       </div>
       <div class = "row mt-5">
-        <%= render "public/comments/comment", comments: @comments %>
-      </div>
-      <div class = "row mt-5 ml-3">
-        <%= render "public/comments/form", post: @post, comment: @comment %>
+        <%= render "public/comments/comment", comments: @post.comments %>
       </div>
     </div>
   </div>
