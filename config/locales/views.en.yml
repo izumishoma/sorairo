@@ -61,3 +61,5 @@ en:
     admin_sign_in: "Admin Sign In"
     e_mail: "Email"
     password: "Password"
+  top:
+    sorairo: "welcome to sorairo"

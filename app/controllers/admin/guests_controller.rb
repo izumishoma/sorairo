@@ -5,6 +5,6 @@ class Admin::GuestsController < ApplicationController
      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
    end
    sign_in admin
-   redirect_to admin_users_path, notice: 'ゲスト管理者としてログインしました。'
+   redirect_to admin_users_path, notice: '管理者としてログインしました。'
   end
 end
