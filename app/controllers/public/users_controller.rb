@@ -1,5 +1,8 @@
 class Public::UsersController < ApplicationController
-  before_action :check_guest, only: [:destroy, :update]
+  #ユーザーのログイン状態を確かめる。
+  before_action :authenticate_user!
+  # ゲストユーザーの編集を制限。
+  before_action :check_guest, only: [:update]
 
 
   def show
@@ -39,7 +42,7 @@ class Public::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :display_name, :introduction, :profile_image )
+    params.require(:user).permit(:name, :display_name, :introduction, :profile_image, :email )
   end
 
 end

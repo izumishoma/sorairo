@@ -1,6 +1,6 @@
 class Public::PostsController < ApplicationController
-   #ユーザーのログイン状態を確かめる。indexはログインしてなくても閲覧可能にしてます。
-  before_action :authenticate_user!, only: [:newe, :show, :create]
+  #ユーザーのログイン状態を確かめる。
+  before_action :authenticate_user!
   
   def new
     @post = Post.new

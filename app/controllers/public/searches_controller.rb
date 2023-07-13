@@ -1,4 +1,5 @@
 class Public::SearchesController < ApplicationController
+  #ユーザーのログイン状態を確かめる。
   before_action :authenticate_user!
 
   def search
