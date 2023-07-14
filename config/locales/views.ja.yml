@@ -50,6 +50,8 @@ ja:
     post_create: "投稿する"
     post_image: "投稿画像"
     posted_text: "投稿文"
+    text_limit: "140文字以内で書いてください"
+    no_image: "・画像を選んでください"
   comment:
     comment_delete: "コメント削除"
     comment_create: "コメントする"

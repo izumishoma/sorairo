@@ -50,6 +50,8 @@ en:
     post_create: "To Post"
     post_image: "Post image"
     posted_text: "Posted text"
+    text_limit: "140 characters or less"
+    no_image: "・No Image"
   comment:
     comment_delete: "Comment Delete"
     comment_create: "To Comment"

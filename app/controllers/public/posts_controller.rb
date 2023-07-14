@@ -11,7 +11,7 @@ class Public::PostsController < ApplicationController
     if @post.save
       redirect_to posts_path
     else
-      redirect_to new_post_path
+      redirect_to new_post_path, alert: I18n.t('post.no_image')
     end
   end
 
