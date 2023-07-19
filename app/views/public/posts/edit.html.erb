@@ -6,7 +6,7 @@
     <div class='col-md-1'></div>
 
     <div class='col-md-8'>
-      <h2><%= I18n.t('post.new_post') %></h2>
+      <h2><%= I18n.t('post.post_edit') %></h2>
       <!--エラーメッセージ-->
       <h5 class="text-danger mb-3">
         <strong><%= flash[:alert] %></strong>
@@ -26,7 +26,7 @@
         </div>
         <!--投稿するユーザーの情報をコントローラに送る-->
         <%= f.hidden_field :user_id, :value => current_user.id %>
-        <%= f.submit I18n.t('post.post_create'), class: 'btn btn-success' %>
+        <%= f.submit I18n.t('post.edit'), class: 'btn btn-success' %>
       <% end %>
     </div>
   </div>

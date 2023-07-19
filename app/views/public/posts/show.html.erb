@@ -28,7 +28,8 @@
 
       <div class = "row ml-1 mt-2">
         <% if @post.user == current_user %>
-          <%= link_to I18n.t('post.post_delete'), post_path(@post.id), method: :delete, class: "btn btn-sm btn-danger" %>
+          <%= link_to I18n.t('post.post_edit'), edit_post_path(@post.id), class: "btn btn-sm btn-success" %>
+          <%= link_to I18n.t('post.post_delete'), post_path(@post.id), method: :delete, class: "btn btn-sm btn-danger", data: {confirm: I18n.t('post.delete')} %>
         <% end %>
       </div>
       <div class = "row mt-5">
