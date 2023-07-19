@@ -43,19 +43,24 @@ en:
     user_details: "User details"
   post:
     post: "Post"
+    edit: "Edit"
     post_file: "Select files"
     posts_list: "Post List"
     post_details: "Post details"
+    new_post: "New Post"
+    post_edit: "Post Edit"
     post_delete: "Post Delete"
     post_create: "To Post"
     post_image: "Post image"
     posted_text: "Posted text"
     text_limit: "140 characters or less"
     no_image: "・No Image"
+    delete: "Delete Post?"
   comment:
     comment_delete: "Comment Delete"
     comment_create: "To Comment"
     comment: "Comment"
+    delete: "Delete Comment?"
   registrations:
     sign_up: "Sign Up"
   sessions:

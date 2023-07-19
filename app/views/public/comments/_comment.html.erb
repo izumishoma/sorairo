@@ -13,7 +13,7 @@
     </div>
     <div>
       <% if comment.user == current_user %>
-        <%= link_to I18n.t('comment.comment_delete'), post_comment_path(comment.post,comment), method: :delete, class: "btn btn-sm btn-danger"   %>
+        <%= link_to I18n.t('comment.comment_delete'), post_comment_path(comment.post,comment), method: :delete, class: "btn btn-sm btn-danger", data: {confirm: I18n.t('comment.delete')} %>
       <% end %>
     </div>
   </div>

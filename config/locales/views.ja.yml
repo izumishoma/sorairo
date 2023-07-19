@@ -43,19 +43,24 @@ ja:
     user_details: "ユーザー詳細"
   post:
     post: "投稿する"
+    edit: "編集する"
     post_file: "ファイルを選択"
     posts_list: "投稿一覧"
     post_details: "投稿詳細"
+    new_post: "新規投稿"
+    post_edit: "投稿編集"
     post_delete: "投稿削除"
     post_create: "投稿する"
     post_image: "投稿画像"
     posted_text: "投稿文"
     text_limit: "140文字以内で書いてください"
     no_image: "・画像を選んでください"
+    delete: "投稿を削除しますか？"
   comment:
     comment_delete: "コメント削除"
     comment_create: "コメントする"
     comment: "コメント"
+    delete: "コメントを削除しますか？"
   registrations:
     sign_up: "新規登録"
   sessions:
