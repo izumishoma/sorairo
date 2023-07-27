@@ -11,7 +11,8 @@ class User < ApplicationRecord
   validates :introduction,length: { maximum: 140 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
-  validates :encrypted_password, presence: true,length: { minimum: 6 }
+  # ユーザー編集時だけパスワードのバリデーションを解除する。
+  validates :password, presence: true,length: { minimum: 6 }, on: :create
 
   has_many :posts, dependent: :destroy
   has_many :commets, dependent: :destroy
@@ -43,7 +44,7 @@ class User < ApplicationRecord
   #   (image.attached?) ? image : 'no_image.jpg'
   #   image.variant(resize_to_limit: [width, height]).processed
   # end
-  
+
   # ユーザーの表示名と完全一致でヒット
   def self.looks(search, word)
     @user = User.where("display_name LIKE?", "#{word}")

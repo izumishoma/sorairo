@@ -1,7 +1,7 @@
 class Public::PostsController < ApplicationController
-   #ユーザーのログイン状態を確かめる。indexはログインしてなくても閲覧可能にしてます。
-  before_action :authenticate_user!, only: [:newe, :show, :create]
-  
+  #ユーザーのログイン状態を確かめる。
+  before_action :authenticate_user!
+
   def new
     @post = Post.new
   end
@@ -11,7 +11,7 @@ class Public::PostsController < ApplicationController
     if @post.save
       redirect_to posts_path
     else
-      redirect_to new_post_path
+      redirect_to new_post_path, alert: I18n.t('post.no_image')
     end
   end
 
@@ -23,6 +23,19 @@ class Public::PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comments = @post.comments
     @comment = Comment.new
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update
+      redirect_to post_path(@post.id)
+    else
+      redirect_to edit_post_path(@post.id), alert: I18n.t('post.no_image')
+    end
   end
 
   def destroy
